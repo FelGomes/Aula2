@@ -1,2 +1,2 @@
-# Aula2
+# POO JAVA
 ExercicioDeSala
