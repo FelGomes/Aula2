@@ -60,7 +60,7 @@ public class Cliente extends People {
         System.out.println("Nome do cliente é: " + super.getNome());
         System.out.println("O cliente tem " + this.getIdade() + " anos");
         System.out.println("O endereco do cliente é " + this.getEndereco());
-        System.out.println("O valor do seu salario final descontado o imposto de renda é" + calcularSalarioFinal(salario, ir));
+        System.out.println("O valor do seu salario final descontado com imposto de renda é de R$: " + calcularSalarioFinal(salario, ir));
         
     }
     
@@ -68,5 +68,11 @@ public class Cliente extends People {
     
     public double calcularSalarioFinal(double salario, double ir){
         return salario = salario - ir;
+    }
+    
+    public void fazertabela(){
+        System.out.println("====================================");
+        System.out.println("             Cliente                ");
+        System.out.println("====================================");
     }
 }

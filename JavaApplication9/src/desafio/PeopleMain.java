@@ -15,6 +15,7 @@ public class PeopleMain {
     public static void main(String[] args) {
         Scanner scan = new Scanner (System.in);
         Cliente c1 = new Cliente();
+        Fornecedor f1 = new Fornecedor();
         
         
        
@@ -41,11 +42,11 @@ public class PeopleMain {
 ////        f1.imprimirFornecedor();
         
 
-          System.out.println("Deseja fazer o cadastro de Um cliente ou um fornecedor?");
-          String resposta = scan.nextLine().toLowerCase();
+        System.out.println("Deseja fazer o cadastro de um cliente ou um fornecedor?");
+        String resposta = scan.nextLine().toLowerCase();
           
-          while (resposta.equals("sim") || resposta.equals("s")){
-              try {
+        while (resposta.equals("sim") || resposta.equals("s")){
+            try {
                 System.out.println("Digite 1 para cliente e 2 para fornecedor: ");
                 int valor = scan.nextInt();
                 scan.nextLine();
@@ -54,35 +55,71 @@ public class PeopleMain {
                         System.out.println("Informe o nome do cliente: ");
                         c1.setNome(scan.nextLine());
                         System.out.println("Informe o seu cpf: ");
-                        String cpf = scan.nextLine();
+                        c1.setCpf(scan.nextLine());
                         System.out.println("Informe a rua: ");
-                        String endereco = scan.nextLine();
+                        c1.setEndereco(scan.nextLine());
                         System.out.println("Informe sua idade: ");
-                        String idade = scan.nextLine();
+                        c1.setIdade(scan.nextLine());
                         System.out.println("Informe o telefone: ");
-                        String telefone = scan.nextLine();
+                        c1.setTelefone(scan.nextLine());
                         System.out.println("Informe seu RG: ");
-                        String rg = scan.nextLine();
-                        
-                        
+                        c1.setRg(scan.nextLine());
+
                         System.out.println("Informe o valor do salario: ");
-                        double salario = scan.nextDouble();
+                        c1.setSalario(scan.nextFloat());
                         System.out.println("Informe o valor do imposto de renda: ");
-                        double imposto_renda = scan.nextDouble();
+                        c1.setIr(scan.nextFloat());
+                        scan.nextLine();
                         
-                        c1.calcularSalarioFinal(salario, imposto_renda);
+                        c1.fazertabela();
+                        c1.calcularSalarioFinal(c1.getSalario(), c1.getIr());
                         c1.imprimirCliente();
+                        System.out.println("===========================================");
                         
                         
+                    break;
+                    case 2:
+                            System.out.println("Digite a razao social da empresa: ");
+                            f1.setNome(scan.nextLine());
+                            System.out.println("DIgite o telefone da empresa: ");
+                            f1.setTelefone(scan.nextLine());
+                            System.out.println("Digite o tempo de idade da empresa: ");
+                            f1.setIdade(scan.nextLine());
+                            System.out.println("Digite o endereco da emrpesa: ");
+                            f1.setEndereco(scan.nextLine());
+                            System.out.println("Digite o Cnpj: ");
+                            f1.setCnpj(scan.nextLine());
+                            System.out.println("Digite o Rg da empresa: ");
+                            f1.setRg(scan.nextLine());
+                            
+                            System.out.println("Informe o preco do produto a venda R$: ");
+                            f1.setValor_produto(scan.nextFloat());
+                            System.out.println("Informe o valor do imposto atribulado a esse produto: ");
+                            f1.setImposto(scan.nextFloat());
+                            scan.nextLine();
+                            
+                            f1.fazertabela();
+                            f1.calcularProduto(f1.getValor_produto(), f1.getImposto());
+                            f1.imprimirFornecedor();
+                            System.out.println("========================================");
+                            
+                            
+                        break;
+                    
+                    default:
+                        System.out.println("Nao existe essa opçao!");
                         break;
                 }
                 
                   
-              } catch (Exception e) {
-              }
+            } catch (Exception e) {
+                System.out.println("Erro na entrada de dado!" + e.getLocalizedMessage());
+            }
+            System.out.println("Deseja fazer o cadastro o cadastro novamente? ");
+            resposta = scan.nextLine().toLowerCase();
+            
               
-              
-          }
+        }
 
 
             
