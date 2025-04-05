@@ -20,6 +20,7 @@ public abstract class Estudante extends PessoaAbstract {
         System.out.println("O estudante esta andando para a sala do diretor");
     }
     
+    @Override
     public void respirar(){
         System.out.println("O aluno esta respirando ofegante apos a atividade física");
     }
