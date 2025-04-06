@@ -15,8 +15,8 @@ public class Professor extends Usuario {
         System.out.println("O professor estudou para dar essa aula");
     }
     
-    public void corrigir(int notas){
-        System.out.println("O professor corrigiu " + notas + "notas dessa sala! ");
+    public void corrigir(int quantidade){
+        System.out.println("O professor corrigiu " + quantidade + " notas dessa sala! ");
     }
     
     
